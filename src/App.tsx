@@ -9,6 +9,9 @@ function App() {
   const [countdown, setCountdown] = useState<number | null>(null);
   const [showPoster, setShowPoster] = useState(false);
   const [bgAudio] = useState(new Audio(vibeMusic));
+  useEffect(() => {
+  bgAudio.load(); // preload
+}, []);
 
 
   // Create beep sound effect
@@ -57,9 +60,18 @@ function App() {
   };
 
   const handleCTAClick = () => {
-    setShowInitial(false);
-    setCountdown(5);
-  };
+  setShowInitial(false);
+
+  // Defer countdown to idle time to reduce input delay
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(() => {
+      setCountdown(5);
+    });
+  } else {
+    setTimeout(() => setCountdown(5), 50); // fallback
+  }
+};
+
 
   useEffect(() => {
     if (countdown !== null && countdown > 0) {

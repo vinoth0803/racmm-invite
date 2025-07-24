@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo1 from './assets/mm_logo.webp';
 import logo2 from './assets/herrisein5.webp';
 import vibeMusic from './assets/powerhouse-vibe.mp3';
-
+import poster from './assets/mm-invite.webp';
 
 function App() {
   const [showInitial, setShowInitial] = useState(true);
@@ -179,11 +179,13 @@ function App() {
                 </div>
 
                 {/* Event Poster Placeholder */}
-                <div className="bg-purple-200 rounded-2xl p-8 mb-6 min-h-[200px] flex flex-col items-center justify-center">
-                  <div className="text-4xl text-purple-400 mb-4">✨</div>
-                  <p className="text-purple-600 font-medium text-center mb-2">Event Poster Placeholder</p>
-                  <p className="text-purple-500 text-sm text-center">Replace with actual event poster</p>
-                </div>
+                <div className="mb-6">
+  <img
+    src={poster}
+    alt="Event Poster"
+    className="rounded-2xl shadow-xl border-4 border-purple-300 w-full max-w-full object-contain max-h-[600px]"
+  />
+</div>
 
                 {/* Footer Quote */}
                 <div className="text-center">

@@ -187,7 +187,6 @@ function App() {
                   <p className="text-gray-600 text-sm mb-1">Sunday, August 3rd, 2025</p>
                   <p className="text-gray-600 text-sm mb-1">9:30 AM - 12:00 PM</p>
                   <p className="text-gray-600 text-sm font-medium mb-1">Government Higher Secondary School, Velachery</p>
-                  <p className="text-gray-600 text-xs font-medium">(<b>LandMark:</b> Opposite to Pheonix Mall)</p>
                 </div>
 
                 {/* Event Poster Placeholder */}
